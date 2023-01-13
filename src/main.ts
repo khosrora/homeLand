@@ -13,7 +13,7 @@ async function bootstrap() {
   app.set("view engine", "ejs");
 
   // ! EXPRESS_LAYOUTS
-  app.set("layout",  './layout/layouts.ejs');
+  app.set("layout", './layout/layouts.ejs');
   app.use(expressLayouts);
   app.set("layout extractScripts", true)
 
