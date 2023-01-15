@@ -1,5 +1,5 @@
-import { Controller, Get, Res } from '@nestjs/common';
-import { Response } from "express";
+import { Controller, Get, Req, Res } from '@nestjs/common';
+import { Response, Request } from "express";
 import { IndexService } from './index.service';
 
 @Controller('/admin')
@@ -11,8 +11,10 @@ export class IndexController {
 
     @Get('home')
     HomePageAdmin(
-        @Res() res: Response
+        @Res() res: Response,
+        @Req() req: Request
     ) {
-        return res.render("pages/index.ejs", {  message: "test" })
+        console.log(req.cookies)
+        return res.render("pages/index.ejs", { message: "test" })
     }
 }

@@ -1,0 +1,10 @@
+import { Matches, IsString, Min } from "class-validator";
+
+
+
+export class UserAdminDTO {
+    @Matches(/^09(1[0-9]|3[0-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}/, { message: "phone must a valid phone number" })
+    @IsString({ message: "phone number field must be a string" })
+    phoneNumber: string;
+    password: string;
+}
